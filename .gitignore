@@ -1,0 +1,33 @@
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Java
+server/target/
+*.class
+*.jar
+*.war
+
+# Node
+web/node_modules/
+web/dist/
+
+# Logs
+*.log
+
+# Environment & Secrets
+*.env
+application-dev.yml
+application-prod.yml
+
+# Claude Code
+.claude/
+
+# Deploy (contains credentials)
+deploy.sh
+docs/deployment.md

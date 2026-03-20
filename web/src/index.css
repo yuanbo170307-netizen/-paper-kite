@@ -1,0 +1,318 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  body {
+    font-family: 'Avenir Next', 'SF Pro Display', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background: #f5f7fa;
+    color: #1e293b;
+    min-height: 100vh;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  /* ====== 蒲公英风格布局 ====== */
+
+  .pgyer-layout {
+    display: flex;
+    min-height: calc(100vh - 57px);
+  }
+
+  /* 左侧边栏 */
+  .pgyer-sidebar {
+    width: 200px;
+    flex-shrink: 0;
+    border-right: 1px solid #e5e7eb;
+    background: #fff;
+    overflow-y: auto;
+  }
+
+  .pgyer-sidebar-header {
+    padding: 16px 16px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #64748b;
+    letter-spacing: 0.02em;
+  }
+
+  .pgyer-sidebar-nav {
+    padding: 0 8px 16px;
+  }
+
+  .pgyer-sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    text-align: left;
+    transition: background 0.15s;
+    cursor: pointer;
+    border: none;
+    background: none;
+  }
+
+  .pgyer-sidebar-item:hover {
+    background: #f1f5f9;
+  }
+
+  .pgyer-sidebar-item.active {
+    background: #ecfdf5;
+  }
+
+  .pgyer-sidebar-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+  }
+
+  .pgyer-sidebar-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .pgyer-sidebar-icon span {
+    font-size: 11px;
+    font-weight: 700;
+    color: #94a3b8;
+  }
+
+  .pgyer-sidebar-name {
+    font-size: 13px;
+    color: #334155;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+  }
+
+  .pgyer-sidebar-item.active .pgyer-sidebar-name {
+    color: #059669;
+    font-weight: 500;
+  }
+
+  /* 右侧主区域 */
+  .pgyer-main {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pgyer-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px;
+    border-bottom: 1px solid #e5e7eb;
+    background: #fff;
+  }
+
+  .pgyer-content {
+    flex: 1;
+    padding: 24px;
+    overflow-y: auto;
+  }
+
+  /* 发布按钮 */
+  .pgyer-btn-publish {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 20px;
+    border-radius: 8px;
+    background: #10b981;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+
+  .pgyer-btn-publish:hover {
+    background: #059669;
+  }
+
+  .pgyer-btn-outline {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+    background: #fff;
+    color: #475569;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .pgyer-btn-outline:hover {
+    border-color: #10b981;
+    color: #059669;
+    background: #ecfdf5;
+  }
+
+  /* 内容区块 */
+  .pgyer-section {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 20px 24px;
+  }
+
+  .pgyer-section-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1e293b;
+  }
+
+  /* 信息表格（key-value） */
+  .pgyer-info-table {
+    width: 100%;
+    font-size: 13px;
+  }
+
+  .pgyer-info-table td {
+    padding: 6px 0;
+    color: #334155;
+  }
+
+  .pgyer-info-label {
+    color: #94a3b8 !important;
+    width: 80px;
+    white-space: nowrap;
+  }
+
+  /* 数据表格 */
+  .pgyer-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+
+  .pgyer-table th {
+    text-align: left;
+    padding: 10px 12px;
+    font-weight: 500;
+    color: #64748b;
+    background: #f8fafc;
+    border-bottom: 1px solid #e5e7eb;
+    white-space: nowrap;
+  }
+
+  .pgyer-table td {
+    padding: 12px 12px;
+    color: #475569;
+    border-bottom: 1px solid #f1f5f9;
+    white-space: nowrap;
+  }
+
+  .pgyer-table tbody tr:hover {
+    background: #f8fafc;
+  }
+
+  .pgyer-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  /* 操作按钮 */
+  .pgyer-action-btn {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    color: #64748b;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+
+  .pgyer-action-btn:hover {
+    background: #f1f5f9;
+    color: #334155;
+  }
+
+  /* 表单输入框 */
+  .pgyer-form-input {
+    width: 100%;
+    height: 40px;
+    padding: 0 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #334155;
+    background: #fff;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+
+  .pgyer-form-input:focus {
+    border-color: #10b981;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+  }
+
+  .pgyer-form-input::placeholder {
+    color: #94a3b8;
+  }
+
+  /* ====== 项目列表页保留的样式 ====== */
+
+  .admin-panel {
+    @apply rounded-2xl border border-slate-200 bg-white shadow-sm;
+  }
+
+  .admin-panel-soft {
+    @apply rounded-xl border border-slate-200 bg-slate-50;
+  }
+
+  .admin-button-primary {
+    @apply inline-flex items-center justify-center rounded-lg bg-emerald-500 px-5 py-2.5 text-[13px] font-medium text-white transition hover:bg-emerald-600;
+  }
+
+  .admin-button-secondary {
+    @apply inline-flex items-center justify-center rounded-lg border border-slate-200 bg-white px-4 py-2 text-[13px] font-medium text-slate-600 transition hover:bg-slate-50;
+  }
+
+  .admin-input {
+    @apply h-10 w-full rounded-lg border border-slate-200 bg-white px-3 text-[14px] text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100;
+  }
+
+  .admin-textarea {
+    @apply min-h-[80px] w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-[14px] text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-3deg); }
+  75% { transform: rotate(3deg); }
+}
+
+.animate-float { animation: float 3s ease-in-out infinite; }
+.animate-wiggle:hover { animation: wiggle 0.4s ease-in-out; }
