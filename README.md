@@ -2,6 +2,12 @@
 
 App 内测分发平台，支持 iOS / Android 安装包的上传、解析、版本管理和 OTA 安装。类似蒲公英 (pgyer.com) 的核心分发功能，专注分发，轻量易部署。
 
+## Screenshots
+
+| 登录页 | 管理后台 | 下载页 (Mobile) |
+|:---:|:---:|:---:|
+| ![Login](screenshots/login.png) | ![Dashboard](screenshots/dashboard.png) | ![Download](screenshots/download-page.png) |
+
 ## Features
 
 - **IPA / APK 上传解析** — 自动提取 bundleId、版本号、图标等元信息
