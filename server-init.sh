@@ -7,7 +7,7 @@ set -e
 MYSQL_DATA_DIR="/data/mysql"
 DB_NAME="appspaces"
 DB_USER="appspaces"
-DB_PWD="Appspaces@2026"
+DB_PWD="your-db-password"
 
 echo "========================================="
 echo "  Appspaces MySQL 初始化"

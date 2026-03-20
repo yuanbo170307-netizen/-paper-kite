@@ -4,9 +4,9 @@
 
 | 项目 | 值 |
 |------|-----|
-| 接口地址 | `POST https://appspace.gzshujiu.com/api/open/upload` |
+| 接口地址 | `POST https://your-domain.com/api/open/upload` |
 | 认证方式 | Header `X-Api-Token` |
-| Token | `appspaces-ci-token-2026` |
+| Token | `your-api-token` |
 | 文件大小限制 | 500MB |
 
 ---
@@ -26,8 +26,8 @@
 ## curl 示例
 
 ```bash
-curl -X POST https://appspace.gzshujiu.com/api/open/upload \
-  -H "X-Api-Token: appspaces-ci-token-2026" \
+curl -X POST https://your-domain.com/api/open/upload \
+  -H "X-Api-Token: your-api-token" \
   -F "file=@app-release.apk" \
   -F "projectKey=litchat" \
   -F "environment=release" \
@@ -60,8 +60,8 @@ pipeline {
     agent any
 
     environment {
-        APPSPACES_TOKEN = 'appspaces-ci-token-2026'
-        APPSPACES_URL = 'https://appspace.gzshujiu.com/api/open/upload'
+        APPSPACES_TOKEN = 'your-api-token'
+        APPSPACES_URL = 'https://your-domain.com/api/open/upload'
         PROJECT_KEY = 'litchat'
     }
 
@@ -99,8 +99,8 @@ pipeline {
     agent { label 'mac' }
 
     environment {
-        APPSPACES_TOKEN = 'appspaces-ci-token-2026'
-        APPSPACES_URL = 'https://appspace.gzshujiu.com/api/open/upload'
+        APPSPACES_TOKEN = 'your-api-token'
+        APPSPACES_URL = 'https://your-domain.com/api/open/upload'
         PROJECT_KEY = 'litchat'
     }
 
@@ -151,8 +151,8 @@ pipeline {
 ```bash
 #!/bin/bash
 
-APPSPACES_URL="https://appspace.gzshujiu.com/api/open/upload"
-APPSPACES_TOKEN="appspaces-ci-token-2026"
+APPSPACES_URL="https://your-domain.com/api/open/upload"
+APPSPACES_TOKEN="your-api-token"
 PROJECT_KEY="litchat"
 ENVIRONMENT="release"
 
@@ -203,7 +203,7 @@ echo "上传成功"
 
 ## 查看项目标识（projectKey）
 
-登录管理后台 https://appspace.gzshujiu.com，在项目列表中查看各项目的 `projectKey`。
+登录管理后台 https://your-domain.com，在项目列表中查看各项目的 `projectKey`。
 
 常用项目标识：
 

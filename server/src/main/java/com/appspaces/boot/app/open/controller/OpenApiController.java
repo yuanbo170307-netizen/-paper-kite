@@ -37,7 +37,7 @@ public class OpenApiController extends AbstractApiController {
      * CI/CD 上传安装包
      * <p>
      * 示例：
-     * curl -X POST https://appspace.gzshujiu.com/api/open/upload \
+     * curl -X POST https://your-domain.com/api/open/upload \
      *   -H "X-Api-Token: your-token" \
      *   -F "file=@app-release.apk" \
      *   -F "environment=release" \

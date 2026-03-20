@@ -27,7 +27,7 @@ public class AuthController extends AbstractApiController {
     @Value("${appspaces.admin.username:admin}")
     private String adminUsername;
 
-    @Value("${appspaces.admin.password:admin123}")
+    @Value("${appspaces.admin.password}")
     private String adminPassword;
 
     @Autowired
